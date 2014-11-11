@@ -29,6 +29,21 @@ window.__sad = new function() {
 }
 ```
 
+### Fix
+
+It'd be wondeful if the links next to console messages (sad_script.js:23) would take me to line 23 in the sources panel.
+Currently this works if the content is loaded, which happens only after a debugger statement is executed.
+
+---
+
+### On the use of sourceUrl
+
+I use sourceUrl here so that the script is placed in the appropriate source panel location (extension folder and filename).
+This is important for keeping the script around in the sources panel after a debugger statement is executed.
+
+When a `sourceUrl` is not used, the script is anonymous and given a name like this (`program:23`) in the console and (`VM234:23`) in the sources panel.
+When the script is anonymous, it is also not kept in the sources sidebar, so it's impossible to get to when not in the context of a debugger.
+
 ---
 
 ### Some screenshots
