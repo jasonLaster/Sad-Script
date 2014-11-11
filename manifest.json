@@ -1,0 +1,27 @@
+{
+  "name": "Sad Script",
+  "version": "0.0.1",
+  "description": "A small extension that highlights the tragedy of injected script",
+  "author": "Jason Laster",
+  "minimum_chrome_version": "22.0",
+
+  "manifest_version": 2,
+
+  "devtools_page": "devtool.html",
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "web_accessible_resources": [
+    "js/lib/*",
+    "js/agent/*"
+  ],
+
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+
+  "permissions": [
+    "tabs"
+  ]
+}
